@@ -452,6 +452,11 @@ body {
   flex-wrap: wrap;
 }
 
+.band.sponsor {
+  background: var(--accent-soft);
+  border-color: rgba(255, 180, 84, 0.35);
+}
+
 .band .band-body {
   max-width: 40rem;
 }
