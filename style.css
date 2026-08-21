@@ -285,13 +285,15 @@ body {
   flex-grow: 1;
 }
 
-.card .links {
+.card .links,
+.repo .links {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.card .links a {
+.card .links a,
+.repo .links a {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   color: var(--accent);
