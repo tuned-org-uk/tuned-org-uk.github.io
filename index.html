@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tuned-org-uk — graph-native vector search and spectral generative models</title>
+  <meta name="description" content="tuned.org.uk: ArrowSpace, the Rust vector-search engine built on graph Laplacians and energy dispersion; pyarrowspace; Latent Sound Diffusion; SmartCore stewardship; and research code in Rust and Python.">
+  <link rel="canonical" href="https://tuned-org-uk.github.io/">
+  <meta property="og:title" content="tuned-org-uk — spectral infrastructure for vectors and sound">
+  <meta property="og:description" content="ArrowSpace vector search, pyarrowspace, Latent Sound Diffusion, SmartCore, and open research code.">
+  <meta property="og:url" content="https://tuned-org-uk.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e1214'/%3E%3Ctext x='16' y='22.5' font-family='monospace' font-size='17' fill='%23ffb454' text-anchor='middle'%3E%CE%BB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="./">&lambda; tuned<span>.org.uk</span></a>
+    <nav aria-label="Main">
+      <a href="#arrowspace">ArrowSpace</a>
+      <a href="#sound">Sound Diffusion</a>
+      <a href="#smartcore">SmartCore</a>
+      <a href="#research">Research</a>
+      <a class="ext" href="https://github.com/tuned-org-uk">GitHub &nearr;</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero wrap">
+    <p class="kicker">AI research engineering &middot; London, UK</p>
+    <h1>Graph-native vector search.<br><span class="accent">Spectral generative models.</span></h1>
+    <p class="lede">We build ArrowSpace, a Rust engine that indexes embeddings as signal graphs and searches them through graph Laplacians and per-feature energy dispersion. Around it we maintain Python bindings, release-gated benchmarks, diffusion models for sound, and the SmartCore machine-learning library.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://github.com/tuned-org-uk">Browse repositories</a>
+      <a class="btn" href="#papers">Read the papers</a>
+    </div>
+    <ul class="facts">
+      <li>Rust-first</li>
+      <li>Science-driven software</li>
+      <li>Minimal by design</li>
+    </ul>
+  </section>
+
+  <section id="arrowspace" class="sec">
+    <div class="wrap">
+      <p class="kicker">Flagship</p>
+      <h2>ArrowSpace &mdash; vectors as graphs</h2>
+      <p class="sec-lede">ArrowSpace treats embeddings as signals on a graph. Search walks a graph Laplacian guided by &lambda;<sup>ED</sup>, an energy-dispersion network over features. Results then respect dataset structure, not only distance. Graph analysis, vector search, and energy-distribution stats ship in one package.</p>
+      <div class="cards">
+        <article class="card">
+          <h3><a href="https://github.com/tuned-org-uk/arrowspace-rs">arrowspace-rs</a></h3>
+          <p>Core engine in Rust. Builds &lambda;&tau;-indexed signal graphs and serves dispersion-model analytics and search for your vectors.</p>
+          <div class="stars">&#9733; 41</div>
+          <div class="links">
+            <a href="https://github.com/tuned-org-uk/arrowspace-rs">Repository</a>
+            <a href="https://crates.io/crates/arrowspace">crates.io</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/tuned-org-uk/pyarrowspace">pyarrowspace</a></h3>
+          <p>Python bindings for ArrowSpace. Build signal graphs, run spectral queries, and analyse datasets from NumPy workflows.</p>
+          <div class="stars">&#9733; 16</div>
+          <div class="links">
+            <a href="https://github.com/tuned-org-uk/pyarrowspace">Repository</a>
+            <a href="https://pypi.org/project/pyarrowspace/">PyPI</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/tuned-org-uk/arrowspace-benches">arrowspace-benches</a></h3>
+          <p>Benchmark suite for the engine. Runs at every release to track recall and latency against baselines.</p>
+          <div class="links">
+            <a href="https://github.com/tuned-org-uk/arrowspace-benches">Repository</a>
+          </div>
+        </article>
+      </div>
+      <aside id="papers" class="paper-strip">
+        <span class="label mono">Papers</span>
+        <a href="https://doi.org/10.21105/joss.09002">Topological Indexing of Vector Spaces &mdash; JOSS, DOI 10.21105/joss.09002</a>
+        <a href="https://arxiv.org/abs/2606.21535">Energy-dispersion networks &mdash; arXiv:2606.21535</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="sound" class="sec">
+    <div class="wrap">
+      <p class="kicker">Generative audio</p>
+      <h2>Latent Sound Diffusion</h2>
+      <div class="split">
+        <div class="body">
+          <p>LSD is a latent diffusion model for <strong>sound production</strong>. A frozen ArrowSpace prior (<span class="mono">L<sub>F</sub></span>, <span class="mono">&lambda;<sup>ED</sup></span>) defines the semantic manifold. An EnCodec encoder produces one-dimensional audio latents. Diffusion runs on those latents while a trainable graph decoder reconstructs waveforms on the feature-space manifold.</p>
+          <p>The model is a tool for producers, not a research claim. Train fast on your own samples. Every run differs by design: seeds stay fresh and latent noise injection is a taste knob.</p>
+          <ul class="link-list">
+            <li><a href="https://github.com/tuned-org-uk/latent-sound-diffusion">latent-sound-diffusion &mdash; model and notebooks</a></li>
+            <li><a href="https://github.com/tuned-org-uk/LSD-studio">LSD-studio &mdash; studio UI in Rust</a></li>
+            <li><a href="https://github.com/tuned-org-uk/arrowspace-latent-diffusion">ALD-SC &mdash; parent project for images</a></li>
+          </ul>
+        </div>
+        <article class="paper-card">
+          <span class="tag">Zenodo &middot; August 2026</span>
+          <h3>Spectral Composition</h3>
+          <p class="subtitle">A new paradigm for sample-based music creation via latent diffusion</p>
+          <p class="author">Lorenzo Moriondo</p>
+          <a class="doi-btn" href="https://doi.org/10.5281/zenodo.21950475">DOI 10.5281/zenodo.21950475</a>
+          <p class="gist">Composition as navigation of a compressed spectral manifold, estimated once from the producer&rsquo;s whole sample library with ArrowSpace.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="smartcore" class="sec">
+    <div class="wrap">
+      <p class="kicker">Stewardship</p>
+      <h2>SmartCore &mdash; machine learning in Rust</h2>
+      <div class="band">
+        <div class="band-body">
+          <p>We maintain and extend SmartCore, a comprehensive library for machine learning and numerical computing in Rust. Regression, classification, clustering, and matrix computation, built from first principles.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://github.com/smartcorelib/smartcore">smartcorelib/smartcore</a>
+            <a class="btn" href="https://smartcorelib.org/">smartcorelib.org</a>
+          </div>
+        </div>
+        <div class="band-meta">
+          <span class="big-stars">&#9733; 949</span>
+          <span class="big-stars-label">Stars on GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="sec">
+    <div class="wrap">
+      <p class="kicker">More from the lab</p>
+      <h2>Research code</h2>
+      <p class="sec-lede">Smaller tools and paper implementations. Most of them Rust, all of them minimal.</p>
+      <div class="research-grid">
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/nanogpt-rs">nanogpt-rs</a></h3>
+          <p>Karpathy&rsquo;s nanoGPT ported to Rust with the Burn framework.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/tauformer">tauformer</a></h3>
+          <p>Transformer built on taumode attention. Topological search attacks high-dimensionality. Companion paper included.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/kalman_clustering">kalman_clustering</a></h3>
+          <p>Cluster any vector space with a Kalman filter.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/topological-pagerank">topological-pagerank</a></h3>
+          <p>MRR-Top0: ranking over the corpus graph that scores the whole top-k list, not just the first hit.</p>
+          <span class="chip">TEX</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/titans-pytorch">titans-pytorch</a></h3>
+          <p>Unofficial PyTorch implementation of Titans memory for transformers.</p>
+          <span class="chip">PYTHON</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/optical-embeddings-rs">optical-embeddings-rs</a></h3>
+          <p>Optical embeddings in the DeepSeek-OCR style.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/constraint-decoding-trie-static">constraint-decoding-trie-static</a></h3>
+          <p>STATIC constrained decoding: a prefix trie flattened to a CSR matrix, enforced by a vectorised kernel.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/solid-community-rs">solid-community-rs</a></h3>
+          <p>Rust port of the Solid Community Server: LDP, WAC, and WebID-TLS specifications.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/javelin-tui">javelin-tui</a></h3>
+          <p>Terminal tool for large embedding sets on Lance files, with graph-based search.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/genegraph-storage">genegraph-storage</a></h3>
+          <p>A small storage layer for large matrices and embeddings.</p>
+          <span class="chip">RUST</span>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/infera">infera</a></h3>
+          <p>DuckDB extension for inference inside the database.</p>
+        </article>
+        <article class="repo">
+          <h3><a href="https://github.com/tuned-org-uk/deep-delta-rs">deep-delta-rs</a></h3>
+          <p>Deep Delta Learning, arXiv:2601.00417, implemented in Rust.</p>
+          <span class="chip">RUST</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <p>Work with us. Sponsorship funds open-source maintenance and the Science-Driven Software newsletter.</p>
+      <p class="copyright">&copy; 2026 tuned-org-uk &middot; London, UK</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="https://github.com/sponsors/tuned-org-uk">GitHub Sponsors</a>
+      <a href="https://www.tuned.org.uk/">www.tuned.org.uk</a>
+      <a href="https://github.com/Mec-iS">@Mec-iS</a>
+      <a href="https://github.com/tuned-org-uk">All repositories</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
